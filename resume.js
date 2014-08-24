@@ -3,7 +3,7 @@
 // 应聘信息
 var applyForService = function($http) {
 	this.getApplyFor = function() {
-		return $http.get(resume_applyFor.json');
+		return $http.get('resume_applyFor.json');
 	}
 }
 
@@ -30,7 +30,7 @@ angular
 // 个人信息
 var personInfoService = function($http) {
 	this.getPersonInfo = function() {
-		return $http.get(resume_personInfo.json')
+		return $http.get('resume_personInfo.json')
 	}
 }
 var personInfoCtrl = function(personInfoService, $scope) {
