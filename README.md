@@ -16,10 +16,5 @@ CuiTianze Laboratory
  -（纯属意淫～。～）。
  - (学习计划的公布也有利于督促自己持续学习，这是主要目的)
 
-
-
-
-cuitianze.github.io
 ===================
-
  No matter what I do, I will go all out to succeed.
