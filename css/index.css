@@ -1,0 +1,10 @@
+/*
+2014-12-15
+cuitianze
+*/
+
+body {margin: 0; padding: 0px;}
+#mainMenu {position: fixed; width: 100%; bottom: 0; text-align: center;}
+#mainMenu a {display:inline-block; width:128px; height:128px; background-image: url("../img/html-css-js.png")}
+#mainMenu a.aCss {background-position: 128px 0;}
+#mainMenu a.aJs {background-position: 256px 0;}
