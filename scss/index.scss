@@ -1,0 +1,33 @@
+/*
+2014-12-15
+cuitianze
+*/
+
+body {margin: 0; padding: 0;}
+#mainMenu {position: fixed; width: 100%; bottom: 0; text-align: center;}
+#mainMenu a {display:inline-block; width:128px; height:128px; background-image: url("../img/whatshouldilearn.png");
+//  background-size: cover;
+//  -webkit-transition: all 1s ease-in-out;
+//  -moz-transition: all 1s ease-in-out;
+//  -o-transition: all 1s ease-in-out;
+//  transition: all 1s ease-in-out;
+//  -webkit-transform: scale(0.5);
+//  -moz-transform: scale(0.5);
+//  -o-transform: scale(0.5);
+//  transform: scale(0.5);
+//  没有实现想要的效果
+}
+//#mainMenu a:hover {
+//  -webkit-transform: scale(1);
+//  -moz-transform: scale(1);
+//  -o-transform: scale(1);
+//  transform: scale(1);
+// 没有实现想要的效果
+//}
+#mainMenu a.aHtml {background-position: 0 0;}
+#mainMenu a.aCss {background-position: -128px*2 0;}
+#mainMenu a.aJs {background-position: -128px*1 0;}
+#mainMenu a.aNode {background-position: -128px*3 0;}
+#mainMenu a.aPhp {background-position: -128px*4 0;}
+#mainMenu a.aPython {background-position: -128px*5 0;}
+#mainMenu a.aDatabase {background-position: -128px*6 0;}
