@@ -6,6 +6,10 @@ body {
   margin: 0;
   padding: 0; }
 
+#mainWrapper .cuitianze {
+  font-size: 1.5em;
+  text-align: center; }
+
 #mainMenu {
   position: fixed;
   width: 100%;
