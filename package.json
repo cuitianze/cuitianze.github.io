@@ -23,6 +23,7 @@
   "homepage": "https://github.com/cuitianze/cuitianze.github.io",
   "devDependencies": {
     "gulp": "^3.8.10",
+    "gulp-obfuscate": "^0.2.9",
     "gulp-sass": "^1.2.4"
   }
 }
