@@ -8,6 +8,8 @@
 
 因为想减少http请求数，于是将菜单的图标整合成一张大图。这样就必须用background,通过控制position来实现。
 
+正是出于对position控制位置很繁琐的考虑，才决定用scss来计算。
+
 这样干脆就不用img了，而直接用a定义background-image了。
 
 然后发现 img可用 img.width , 而 a.width 不行，必须用 a.style.width。
