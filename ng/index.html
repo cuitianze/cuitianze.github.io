@@ -10,11 +10,11 @@
         </div>
         <script src="../bower_components/angular/angular.min.js"></script>
         <script type="text/javascript" charset="utf-8">
-            angular.module('ng').controller('time', function() {
+            angular.module('ng').controller('time', ['$timeout', function($timeout) {
                 $titmeout(function() {
                     $scope.time = new Date();
                 });
-            })
+            }])
         </script>
 
     </body>
