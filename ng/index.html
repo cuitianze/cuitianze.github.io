@@ -3,7 +3,19 @@
     <head>
         <title>ng的折腾</title>
     </head>
-    <body>
+    <body ng-app="ng">
         开始折腾ng了
+        <div ng-controller="time">
+            {{titme}}
+        </div>
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            app.module('ng').controller('time', function() {
+                $titmeout(function() {
+                    $scope.time = new Date();
+                });
+            })
+        </script>
+
     </body>
 </html>
