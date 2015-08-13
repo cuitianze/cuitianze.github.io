@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Famous</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/famous/dist/famous-global.min.js"></script>
+    <script src="../bower_components/famous-angular/dist/famous-angular.min.js"></script>
+    <link rel="stylesheet" href="../bower_components/famous-angular/dist/famous-angular.min.css"/>
+</head>
+<body>
+    <div ng-app="myApp">
+        <fa-app style="height: 200px"><fa-surface fa-background-color="'red'">Hello world</fa-surface></fa-app>
+        <fa-app id="app">
+        <!--
+        <fa-modifier ng-repeat="cat in [1, 2, 3, 4]">
+        <fa-surface>
+        ...
+        </fa-surface>
+        </fa-modifier>
+        -->
+        <fa-surface>
+            <input type="range">
+        </fa-surface>
+        </fa-app>
+    </div>
+</body>
+</html>
