@@ -84,10 +84,49 @@
                             // 赋给另一个值
                             $scope.parseValue = parseFun(scope);
                         }
-                    })
-                }])
+                    });
+                }]);
             </script>
         </xmp>
 
+        <h4>插值字符串$interpolate</h4>
+        <div ng-controller="interpolateController">
+            <input ng-model="to" type="email" placeholder="邮件地址"/>
+            <textarea ng-model="emailBody"></textarea>
+            <pre>{{ previewText }}</pre>
+        </div>
+        <script>
+            angular.module('angularLearning')
+            .controller('interpolateController', ['$scope', '$interpolate', function($scope, $interpolate) {
+                $scope.to = "cuitianze@dachuwang.com";
+                $scope.emailBody = "Hello {{ to }}, Welcome to Angular World";
+                $scope.$watch('emailBody', function(body) {
+                    if (body) {
+                        var template = $interpolate(body);
+                        $scope.previewText = template({ to: $scope.to });
+                    }
+                })
+            }]);
+        </script>
+        <xmp>
+            <div ng-controller="interpolateController">
+                <input ng-model="to" type="email" placeholder="邮件地址"/>
+                <textarea ng-model="emailBody"></textarea>
+                <pre>{ { previewText }}</pre>
+            </div>
+            <script>
+                angular.module('angularLearning')
+                .controller('interpolateController', ['$scope', '$interpolate', function($scope, $interpolate) {
+                    $scope.to = "cuitianze@dachuwang.com";
+                    $scope.emailBody = "Hello { { to }}, Welcome to Angular World";
+                    $scope.$watch('emailBody', function(body) {
+                        if (body) {
+                            var template = $interpolate(body);
+                            $scope.previewText = template({ to: $scope.to });
+                        }
+                    })
+                }]);
+            </script>
+        </xmp>
     </body>
 </html>
