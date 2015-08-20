@@ -2,10 +2,10 @@
  * Created by bluesky on 14-12-15.
  */
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var obfuscate = require('gulp-obfuscate');
+//var sass = require('gulp-sass');
+//var obfuscate = require('gulp-obfuscate');
 
-
+/*
 var paths = {
     scss: ['scss/*.scss']
 };
@@ -25,5 +25,9 @@ gulp.task('obfuscate', function() {
       .pipe(obfuscate({replaceMethod: obfuscate.ZALGO }))
       .pipe(gulp.dest('混淆版/index2.js'));
 });
+*/
+gulp.task('allFile', function() {
+    gulp.watch('*');
+});
 
-gulp.task('default', ['watch', 'obfuscate']);
+gulp.task('default', ['allFile']);
