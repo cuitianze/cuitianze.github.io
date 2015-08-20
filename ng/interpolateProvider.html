@@ -1,0 +1,48 @@
+<!doctype html5>
+<html>
+    <head>
+        <title>Angular学习笔记</title>
+        <script src="../bower_components/angular/angular.min.js"></script>
+    </head>
+    <body ng-app="angularLearning">
+
+        <h4>$interpolateProvider</h4>
+        <p>用startSymbol()方法,endSymbol()方法可以修改标识开始和结束的符</p> 
+        <p>如果要修改这两个符号的设置,需要在创建新模块时将$interpolateProvider注入进去。</p>
+        <div id="emailEditor" ng-controller="interpolateProviderController">
+            <input ng-model="to" type="email" placeholder="输入邮件地址"/>
+            <textarea ng-model="emailBody"></textarea>
+            <div id="emailPreview">
+                <pre> __previewText__ </pre>
+            </div>
+        </div>
+        <script>
+            angular.module('angularLearning', ['emailParser'])
+            .controller('interpolateProviderController', ['$scope', 'EmailParser', function($scope, EmailParser) {
+                $scope.to = 'cuitianze123@gmail.com';
+                $scope.emailBody = '你好吗? __to__';
+                $scope.$watch('emailBody', function(body) {
+                    if(body) {
+                        $scope.previewText  = EmailParser.parse(body, {
+                            to: $scope.to
+                        })
+                    }
+                })
+            }]);
+            angular.module('emailParser', [])
+            .config(['$interpolateProvider', function($interpolateProvider) {
+                $interpolateProvider.startSymbol('__');
+                $interpolateProvider.endSymbol('__');
+            }])
+            .factory('EmailParser', ['$interpolate', function($interpolate) {
+                // 处理解析的服务
+                return {
+                    parse: function(text, context) {
+                        var template = $interpolate(text);
+                        return template(context);
+                    }
+                }
+            }])
+       </script>
+    </body>
+</html>
