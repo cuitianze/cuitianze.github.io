@@ -1,21 +1,32 @@
-<!doctype html5>
-<html>
-    <head>
-        <title>ng的折腾</title>
-    </head>
-    <body ng-app="ng">
-        开始折腾ng了
-        <div ng-controller="time">
-            {{time | date}}
-        </div>
-        <script src="../bower_components/angular/angular.min.js"></script>
-        <script type="text/javascript" charset="utf-8">
-            angular.module('ng').controller('time', ['$timeout', function($timeout) {
-                $titmeout(function() {
-                    $scope.time = new Date();
-                });
-            }])
-        </script>
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body>
 
-    </body>
+    <h1>{{title}}</h1>
+
+    <div ng-controller="TimeController">
+        <h1>{{ clock.now | date:'MM/dd/yyyy @ h:mm:ssa'}}</h1>
+    </div>
+
+    <input type="text" ng-model="name" placeholder="Your Name"/>
+    <h1>Hello {{name}}</h1>
+
+    <div ng-controller="PersonController">
+        <input ng-model="person.name" type="text" placeholder="Your Name"/>
+        <h1>你好,{{person.name}}</h1>
+    </div>
+
+    <div>
+        <div ng-controller="MyController">
+            <h1>Hello {{ name }} </h1>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
 </html>
