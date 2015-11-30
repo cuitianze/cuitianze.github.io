@@ -4,6 +4,8 @@ CuiTianze Laboratory
 
 学习笔记：   
 1、[webpack学习笔记](./devNote/webpack.md)
+2、[gulp学习笔记](./devNote/gulp.md)
+3、[gulp和webpack搭配使用](./devNote/gulp&&webpack.md)
 
 计划看的书：  
 算法类：   
