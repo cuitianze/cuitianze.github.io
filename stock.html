@@ -22,10 +22,10 @@
 
                 console.log('共有'+stock_list.length+'支股票');
                 stock_list.map(function (item, index) {
-                    stock_img = img_url + ( /^6/.test(item.value) ? "sh" : "sz" ) + item.value +".gif";
+                    stock_img = img_url + ( /^6/.test(item.val) ? "sh" : "sz" ) + item.val +".gif";
                     console.log(item.val2, stock_img);
 //                    if (index > 20) return;
-                    if (/^300/.test(item.value)) return;
+                    if (/^300/.test(item.val)) return;
                     $('#stock_list').append("<div style='display: inline-block; width: 31%; height: 300px; margin: 10px;'><span>"+item.val2+"</span><img style='width: 100%; height: 100%;' src='" + stock_img  +"' /></div>");
 
                 });
