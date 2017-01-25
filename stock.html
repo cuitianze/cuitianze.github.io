@@ -12,27 +12,26 @@
     <div id = "stock_list">
 
     </div>
+    <script src="http://www.sse.com.cn/js/common/ssesuggestdata.js"></script>
     <script>
         $(document).ready(function(){
             // 在这里写你的代码...
             var stock_list = [];
+            stock_list = get_data();
             var img_url = "http://image.sinajs.cn/newchart/daily/n/";
-            $.get('http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=5000&sort=changepercent&asc=0&node=sh_a&symbol=', function (res) {
-                stock_list = res;
-                console.log(stock_list);
+
                 console.log('共有'+stock_list.length+'支股票');
                 stock_list.map(function (item, index) {
-                    stock_img = img_url + ( /^6/.test(item.code) ? "sh" : "sz" ) + item.ticker +".gif";
-                    console.log(item.name, stock_img);
+                    stock_img = img_url + ( /^6/.test(item.value) ? "sh" : "sz" ) + item.value +".gif";
+                    console.log(item.val2, stock_img);
 //                    if (index > 20) return;
-                    if (/^300/.test(item.ticker)) return;
-                    $('#stock_list').append("<div style='display: inline-block; width: 31%; height: 300px; margin: 10px;'><span>"+item.sec_short_name+"</span><img style='width: 100%; height: 100%;' src='" + stock_img  +"' /></div>");
+                    if (/^300/.test(item.value)) return;
+                    $('#stock_list').append("<div style='display: inline-block; width: 31%; height: 300px; margin: 10px;'><span>"+item.val2+"</span><img style='width: 100%; height: 100%;' src='" + stock_img  +"' /></div>");
 
                 });
 
                 $('#stock_list').append("<b>Hello</b>");
-            });
-        });
+
     </script>
 </body>
 </html>
